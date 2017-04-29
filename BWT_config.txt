@@ -6,5 +6,6 @@ dataFilePath = Data/
 #dataFileName = BWT_Banana.txt
 #dataFileName = BWT_Mississippi.txt
 #dataFileName = BWT_TreatyOfWaitangiA0part.txt
-dataFileName = BWT_TreatyOfWaitangiA0.txt
+#dataFileName = BWT_TreatyOfWaitangiA0.txt
 #dataFileName = BWT_TreatyOfWaitangiComplete.txt
+dataFileName = BWT_1Corinthians13.txt

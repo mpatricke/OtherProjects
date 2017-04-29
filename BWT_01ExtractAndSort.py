@@ -27,6 +27,9 @@ outFileName = configParser.get('BWT_config','dataFilePath')+'Out'+dataFileName
 with open(dataFilePath, 'rU') as textFile:
 	textData = textFile.read().rstrip('\n')
 
+textData = textData.replace(configParser.get('BWT_config','startChar'), 'xxxstartCharxxx')
+textData = textData.replace(configParser.get('BWT_config','endChar'), 'xxxendCharxxx')
+
 textData = configParser.get('BWT_config','startChar')+textData+configParser.get('BWT_config','endChar')
 
 print "Input text:",textData
@@ -51,8 +54,8 @@ for i in range(0,lenText):
 with open(outFileName,'w+') as textFileOut:
     textFileOut.write(textDataLastCol)
 
-print
-print "Output text:", textDataLastCol
+#print
+#print "Output text:", textDataLastCol
 
 print
 print "Program:         ", os.path.abspath(__file__)

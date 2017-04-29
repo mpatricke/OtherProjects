@@ -44,13 +44,19 @@ for j in range(lenText,0,-1):
 for i in range(0,lenText):
     textTmp = textDataArr[i]
     if textTmp[:1] == configParser.get('BWT_config','startChar'):
-        result = textDataArr[i]
+        textDataUnxform = textDataArr[i]
         break
 
-lenResult = len(result)
-result = result[1:lenResult-1]
+lenResult = len(textDataUnxform)
+textDataUnxform = textDataUnxform[1:lenResult-1]
 
-print "Output text:", result
+textDataUnxform = textDataUnxform.replace('xxxstartCharxxx', configParser.get('BWT_config','startChar'))
+textDataUnxform = textDataUnxform.replace('xxxendCharxxx', configParser.get('BWT_config','endChar'))
+
+with open(endFileName,'w+') as textFileOut:
+    textFileOut.write(textDataUnxform)
+
+#print "Output text:", textDataUnxform
 print
 print "Program:         ", os.path.abspath(__file__)
 print "Input data file:  ... ", dataFilePath
